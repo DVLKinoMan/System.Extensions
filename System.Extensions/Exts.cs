@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace System.CustomModels
+namespace System.Extensions
 {
     public static class Exts
     {
