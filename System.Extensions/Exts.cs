@@ -5,9 +5,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace System.Extensions
+namespace System.Exts
 {
-    public static class Exts
+    public static class Extensions
     {
         public static string GetDefaultSqlString<TValue>(TValue value) =>
             value switch
