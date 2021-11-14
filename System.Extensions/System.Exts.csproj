@@ -8,6 +8,7 @@
     <RepositoryUrl>https://github.com/DVLKinoMan/System.Exts</RepositoryUrl>
     <PackageId>SystemNET.Exts</PackageId>
     <Product>SystemNET.Exts</Product>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>
