@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>David Dvali</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/DVLKinoMan/System.Exts</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DVLKinoMan/System.Exts</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
