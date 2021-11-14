@@ -6,6 +6,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/DVLKinoMan/System.Exts</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DVLKinoMan/System.Exts</RepositoryUrl>
+    <PackageId>SystemNET.Exts</PackageId>
+    <Product>SystemNET.Exts</Product>
   </PropertyGroup>
 
 </Project>
