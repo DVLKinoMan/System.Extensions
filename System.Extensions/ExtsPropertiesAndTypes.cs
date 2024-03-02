@@ -18,18 +18,18 @@ namespace System.Exts
             return isAnonymousType;
         }
 
-        public static void AddProperty(ExpandoObject expando, string propertyName, object propertyValue)
+        public static void AddProperty(ExpandoObject expando, string propertyName, object? propertyValue)
         {
             // ExpandoObject supports IDictionary so we can extend it like this
-            var expandoDict = expando as IDictionary<string, object>;
+            var expandoDict = expando as IDictionary<string, object?>;
             if (expandoDict.ContainsKey(propertyName))
                 expandoDict[propertyName] = propertyValue;
             else
                 expandoDict.Add(propertyName, propertyValue);
         }
 
-        public static object GetProperty(this ExpandoObject expando, string propertyName) =>
-            expando is IDictionary<string, object> dic ? dic[propertyName] : throw new Exception();
+        public static object? GetProperty(this ExpandoObject expando, string propertyName) =>
+            expando is IDictionary<string, object?> dic ? dic[propertyName] : throw new Exception();
 
         public static bool HasParameterlessConstructor<T>() =>
             typeof(T).GetConstructor(
