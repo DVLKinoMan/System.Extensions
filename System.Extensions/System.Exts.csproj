@@ -8,8 +8,8 @@
     <RepositoryUrl>https://github.com/DVLKinoMan/System.Exts</RepositoryUrl>
     <PackageId>SystemNET.Exts</PackageId>
     <Product>SystemNET.Exts</Product>
-    <Version>3.1.0</Version>
-    <PackageReleaseNotes>.Net 8 Upgrade</PackageReleaseNotes>
+    <Version>3.1.3</Version>
+    <PackageReleaseNotes>MC Bug Fixes</PackageReleaseNotes>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
