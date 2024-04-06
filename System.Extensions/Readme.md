@@ -12,7 +12,7 @@ Feature 3: extensions for properties
 Installation
 You can install SystemNet.Exts via NuGet package manager:
 
-NuGet\Install-Package SystemNET.Exts -Version 3.2.0
+NuGet\Install-Package SystemNET.Exts -Version 3.3.0
 
 License
 This project is licensed
