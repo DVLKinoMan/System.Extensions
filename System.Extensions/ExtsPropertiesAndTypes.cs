@@ -18,6 +18,21 @@ namespace System.Exts
             return isAnonymousType;
         }
 
+        public static bool IsTuple(this Type type)
+            => type.Namespace == "System" 
+            && type.Name.StartsWith("ValueTuple`", StringComparison.Ordinal);
+        
+        public static bool IsRecord(this Type type)
+            => type.GetMethods().Any(m => m.Name == "<Clone>$");
+
+        public static bool IsCustomClass(this Type type)
+            => type.Namespace != "System"
+                    && type.IsClass;
+
+        public static bool IsCustomStruct(this Type type)
+            => type.Namespace != "System"
+                    && type.IsValueType;
+
         public static void AddProperty(ExpandoObject expando, string propertyName, object? propertyValue)
         {
             // ExpandoObject supports IDictionary so we can extend it like this
@@ -35,6 +50,15 @@ namespace System.Exts
             typeof(T).GetConstructor(
                 BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
                 null, Type.EmptyTypes, null) != null;
+
+        public static object? CreateRecordInstance(this Type recordType, object[] values)
+        {
+            var properties = recordType.GetProperties();
+            var constructorParams = new object[properties.Length];
+            for (int i = 0; i < properties.Length; i++)
+                constructorParams[i] = values[i];
+            return Activator.CreateInstance(recordType, constructorParams);
+        }
 
         public static bool IsGenericType(this Type type, Type interfaceType) =>
             type.UnderlyingSystemType.Name == interfaceType.Name || type
