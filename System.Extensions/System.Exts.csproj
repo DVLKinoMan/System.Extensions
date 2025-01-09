@@ -8,13 +8,14 @@
     <RepositoryUrl>https://github.com/DVLKinoMan/System.Exts</RepositoryUrl>
     <PackageId>SystemNET.Exts</PackageId>
     <Product>SystemNET.Exts</Product>
-    <Version>3.3.0</Version>
+    <Version>3.3.1</Version>
     <PackageReleaseNotes>New Features for Type Extensions</PackageReleaseNotes>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageOutputPath>C:\Custom Offline Packages</PackageOutputPath>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <AssemblyVersion>3.3.0</AssemblyVersion>
-    <FileVersion>3.3.0</FileVersion>
+    <AssemblyVersion>3.3.1</AssemblyVersion>
+    <FileVersion>3.3.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

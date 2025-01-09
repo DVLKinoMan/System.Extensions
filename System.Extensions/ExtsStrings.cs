@@ -22,28 +22,29 @@ namespace System.Exts
             };
 
         public static SqlDbType DefaultMap<TValue>(TValue value) =>
-           DefaultMap(typeof(TValue) == typeof(object) ?
-               (value == null ? throw new ArgumentNullException(nameof(value)) : value.GetType())
-               : typeof(TValue));
+            DefaultMap(typeof(TValue) == typeof(object)
+                ? (value == null ? throw new ArgumentNullException(nameof(value)) : value.GetType())
+                : typeof(TValue));
 
         internal static Dictionary<Type, SqlDbType> SqlDbTypes = new()
         {
-            {typeof(bool), SqlDbType.Bit},
-            {typeof(DateTime), SqlDbType.DateTime},
-            {typeof(decimal), SqlDbType.Decimal},
-            {typeof(double), SqlDbType.Float},
-            {typeof(float), SqlDbType.Float},
-            {typeof(int), SqlDbType.Int},
-            {typeof(Guid), SqlDbType.UniqueIdentifier},
-            {typeof(string), SqlDbType.NVarChar},
-            {typeof(byte), SqlDbType.TinyInt},
-            {typeof(byte[]), SqlDbType.Binary}
+            { typeof(int), SqlDbType.Int },
+            { typeof(long), SqlDbType.BigInt },
+            { typeof(bool), SqlDbType.Bit },
+            { typeof(DateTime), SqlDbType.DateTime },
+            { typeof(decimal), SqlDbType.Decimal },
+            { typeof(double), SqlDbType.Float },
+            { typeof(float), SqlDbType.Float },
+            { typeof(Guid), SqlDbType.UniqueIdentifier },
+            { typeof(string), SqlDbType.NVarChar },
+            { typeof(byte), SqlDbType.TinyInt },
+            { typeof(byte[]), SqlDbType.Binary }
         };
 
         public static SqlDbType DefaultMap(Type type) =>
             SqlDbTypes.TryGetValue(type, out SqlDbType value)
-            ? value
-            : type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>)
+                ? value
+                : type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>)
                     ? DefaultMap(Nullable.GetUnderlyingType(type)!)
                     : throw new NotImplementedException($"{type.Name} is not implemented");
 
@@ -117,7 +118,8 @@ namespace System.Exts
         }
 
         public static string RemoveUnnecessaryNewlines(this string str) =>
-            string.Join(Environment.NewLine, str.Split(Environment.NewLine).Where(s => !string.IsNullOrEmpty(s) && s != Environment.NewLine));
+            string.Join(Environment.NewLine,
+                str.Split(Environment.NewLine).Where(s => !string.IsNullOrEmpty(s) && s != Environment.NewLine));
 
         /// <summary>
         /// Returns string After prevoiusString from text
